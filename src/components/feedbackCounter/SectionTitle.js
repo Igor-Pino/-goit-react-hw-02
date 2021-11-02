@@ -4,7 +4,7 @@ import s from './Counter.module.css';
 
 function SectionTitle({ children }) {
   return (
-    <div className={s.conteiner}>
+    <div className={s.container}>
       <h1 className={s.title}>Please leave feedback</h1>
       {children}
     </div>
