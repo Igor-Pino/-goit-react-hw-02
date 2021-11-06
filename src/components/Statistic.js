@@ -10,34 +10,17 @@ class Statistic extends Component {
     bad: 0,
   };
 
-  onGoodBtn = () => {
+  onOptionBtnClick = option => {
     this.setState(prevState => {
       return {
-        good: prevState.good + 1,
-      };
-    });
-  };
-
-  onNeutralBtn = () => {
-    this.setState(prevState => {
-      return {
-        neutral: prevState.neutral + 1,
-      };
-    });
-  };
-
-  onBadBtn = () => {
-    this.setState(prevState => {
-      return {
-        bad: prevState.bad + 1,
+        [option]: prevState[option] + 1,
       };
     });
   };
 
   countTotalFeedback = () => {
-    const total = this.state.good + this.state.neutral + this.state.bad;
-
-    return total;
+    const total = Object.values(this.state);
+    return total.reduce((acc, value) => acc + value);
   };
 
   countPositiveFeedbackPercentage = () => {
@@ -46,13 +29,11 @@ class Statistic extends Component {
   };
 
   render() {
+    const options = Object.keys(this.state);
+
     return (
       <div>
-        <Options
-          onGoodBtn={this.onGoodBtn}
-          onNeutralBtn={this.onNeutralBtn}
-          onBadBtn={this.onBadBtn}
-        />
+        <Options options={options} onBtnClick={this.onOptionBtnClick} />
 
         <>
           <h2 className={s.statisticTitle}>Statistic</h2>

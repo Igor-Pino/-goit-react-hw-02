@@ -1,6 +1,6 @@
-import SectionTitle from './components/feedbackCounter/SectionTitle';
+import SectionTitle from './components/SectionTitle';
 
-import Statistic from './components/feedbackCounter/Statistic';
+import Statistic from './components/Statistic';
 
 export default function App() {
   return (
