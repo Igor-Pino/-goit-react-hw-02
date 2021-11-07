@@ -1,6 +1,6 @@
 import React from 'react';
 import propTypes from 'prop-types';
-import s from './Counter.module.css';
+import s from '../Style.module.css';
 
 function SectionTitle({ children }) {
   return (

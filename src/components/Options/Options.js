@@ -1,4 +1,4 @@
-import s from './Counter.module.css';
+import s from '../Style.module.css';
 import propTypes from 'prop-types';
 
 function Options({ options, onBtnClick }) {

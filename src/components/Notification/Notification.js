@@ -1,5 +1,5 @@
 import React from 'react';
-import s from './Counter.module.css';
+import s from '../Style.module.css';
 
 function Notification() {
   return <p className={s.notification}>No feedback given</p>;

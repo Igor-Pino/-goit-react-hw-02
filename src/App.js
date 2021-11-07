@@ -1,6 +1,6 @@
-import SectionTitle from './components/SectionTitle';
+import SectionTitle from './components/SectionTitle/SectionTitle';
 
-import Statistic from './components/Statistic';
+import Statistic from './components/Statistic/Statistic';
 
 export default function App() {
   return (

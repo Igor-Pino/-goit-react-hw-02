@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import s from './Counter.module.css';
-import Options from './Options';
-import Notification from './Notification';
+import s from '../Style.module.css';
+import Options from '../Options/Options';
+import Notification from '../Notification/Notification';
 
 class Statistic extends Component {
   state = {
@@ -31,6 +31,8 @@ class Statistic extends Component {
   render() {
     const options = Object.keys(this.state);
 
+    const totalFeedback = this.countTotalFeedback();
+
     return (
       <div>
         <Options options={options} onBtnClick={this.onOptionBtnClick} />
@@ -39,9 +41,9 @@ class Statistic extends Component {
           <h2 className={s.statisticTitle}>Statistic</h2>
         </>
 
-        {this.countTotalFeedback() === 0 && <Notification />}
+        {totalFeedback === 0 && <Notification />}
 
-        {this.countTotalFeedback() !== 0 && (
+        {totalFeedback !== 0 && (
           <>
             <p>
               <span className={s.score}>Good:</span>
